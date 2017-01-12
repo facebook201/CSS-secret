@@ -89,6 +89,13 @@ var element = document.querySelector('.box');
 #### document.documentElement.scrollTop 垂直方向滚动的值 
 #### event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量 
 
+### Element.getBoundingClientRect(); 
+只读, 返回浮点值。这个方法返回一个DOMRect对象里面包含6个只读属性。
+
+`left top right bottom` ( 都是元素相对于视口的原点的距离 )
+
+`width height`(元素整体尺寸 包括被滚动隐藏的部分 padding border参与计算 )
+
 
 
 
