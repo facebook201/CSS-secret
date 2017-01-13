@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双飞翼</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.header,
+		.footer{
+			height: 100px;
+			background-color: #ddd;
+			width: 100%;
+			clear: both;
+		}
+		.clearfix{
+			zoom: 1;
+		}
+		.clearfix:after{
+			content: '';
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+		.main,
+		.left,
+		.right{
+			float: left;
+			height: 300px;
+		}
+		.main{
+			width: 100%;
+		}
+		.sub-main{
+			margin: 0 200px;
+			height: 300px;
+			background-color: blue;
+		}
+		.left{
+			margin-left: -100%;
+			width: 200px;
+			background-color: green;
+		}
+		.right{
+			margin-left: -200px;
+			width: 200px;
+			background-color: pink;
+		}
+		
+
+	</style>
+</head>
+<body>
+
+	<div class="header"></div>
+	
+	<div class="container clearfix">
+		<div class="main">
+			<div class="sub-main">Main</div>
+		</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+
+	<div class="footer"></div>
+	
+</body>
+</html>
