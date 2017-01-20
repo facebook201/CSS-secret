@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS_button</title>
+    <style>
+        html{font-size: 100px;}
+        html,body{height: 100%;}
+        body{margin: 0;padding: 0;}
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: .05rem dashed #3db7a9;
+            height: 4rem;
+            width: 4rem;
+        }
+        /* label标签模拟按钮 */
+        .emulate-ios-button{
+            display: block;
+            width: 2rem;
+            height: 1rem;
+            background-color: #ccc;
+            border-radius: 5rem;
+            cursor: pointer;
+            position: relative;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+        }
+        .emulate-ios-button::after{
+            content: '';
+            display: block;
+            width: .9rem;
+            height: .9rem;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            position: absolute;
+            left: 0.05rem;
+            top: 0.05rem;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+        .emulate-ios-button::before{
+            content: '';
+            display: block;
+            width: .2rem;
+            height: .2rem;
+            border-radius: 50%;
+            background-color: #fff;
+            right: .2rem;
+            top: .4rem;
+            position: absolute;
+        }
+        .emulate-ios-button:active:after{
+            width: 1.1rem;
+        }
+
+        .raw-checkbox{
+            position: absolute;
+            clip: rect(0,0,0,0);
+            height: 2rem;
+            width: 2rem;
+        }
+        .raw-checkbox:checked+label{
+            background-color: #34bf49;
+        }
+        /* 这里是为元素偏移 初始是0.9+0.05  */
+        .raw-checkbox:checked+label:after{
+            left: 1.05rem;
+        }
+        .raw-checkbox:checked+label::before{
+            position: absolute;
+            left: 0.25rem;
+            top: .25rem;
+            content: '';
+            display: block;
+            height: .5rem;
+            width: .03rem;
+            background-color: #fff;
+        }
+        /*切换选中的时候是的按钮靠左 不然就会偏出checkbox*/
+        .raw-checkbox:checked+label:active:after{
+            left: .5rem;
+        }
+        .raw-checkbox:disabled+label{
+            background-color: #d5d5d5;
+            pointer-events: none;
+        }
+
+        .raw-checkbox:disabled+label:after{
+            background-color: #bcbdbc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CSS模仿iOS切换按钮 -->
+
+        <div class="box">
+            <input type="checkbox" id="ios-checkbox" name="emulate-ios-button" class="raw-checkbox">
+            <label for="ios-checkbox" class="emulate-ios-button"></label>
+        </div>
+</body>
+</html>
