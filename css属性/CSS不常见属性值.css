@@ -1,0 +1,4 @@
+
+/* writing-mode 把默认的水平由上至下的书写方式转变成垂直并由左至右。 */
+
+h1{ writing-mode: vertical-rl; }

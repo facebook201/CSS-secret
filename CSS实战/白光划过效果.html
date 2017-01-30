@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白光划过效果</title>
+    <style>
+        body{margin: 0;padding: 0;}
+        .highlight-box{
+            height: 260px;
+            width: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-box img{
+            width: 100%;
+            height: 100%;
+        }
+        .highlight-box:before{
+            display: block;
+            content: '';
+            /* 这里top 和 left。让白光移动到图片左上角 后续的划过动画也是依靠这两个属性 */
+            top: -200%;
+            left: -100%;
+            /* 定义白光的高度 */
+            width: 50%;
+            height: 300%;
+            /* 旋转的角度 可以调整 */
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            /*使用渐变来实现白光*/
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, .05) 20%,
+            rgba(255, 255, 255, .6) 65%, rgba(255, 255, 255, .05) 100%);
+    background: linear-gradient(left, rgba(255, 255, 255, .05) 20%,
+            rgba(255, 255, 255, .6) 65%, rgba(255, 255, 255, .05) 100%);
+            z-index: 2;
+            position: absolute;
+        }
+        .highlight-box:hover:before{
+            /*这里省略私有前缀代码 */
+            -webkit-animation: crossed .5s linear;
+            animation: crossed .5s linear;
+        }
+        @keyframes crossed{
+            0%{
+                top: -200%;
+                left: -100%;
+            }
+            100%{
+                top: -50px;
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="highlight-box">
+        <img src="img/img.png" alt="" />
+    </div>
+
+</body>
+</html>
