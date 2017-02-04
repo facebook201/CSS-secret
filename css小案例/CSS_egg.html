@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content='IE=Edge,chrome=1' />
+	<meta name="viewport" content='width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no'>
+	<title>Webpack</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="container" class="container">
+
+		<section id="ios" class="demo">
+			<h1>1. ios 切换选框</h1>
+			<div class="ios-checkbox common-border">
+				<input type="checkbox" id="ios-checkbox" name='emulate-ios-button' class="raw-checkbox">
+				<label for="ios-checkbox" class="emulate-ios-button"></label>
+			</div>
+		</section>
+
+		<section id="border-dashed" class="demo">
+			<h1>2. 虚线边框背景</h1>
+			<div class='common-border'>
+				<div class="border-dashed"></div>
+			</div>
+			<div class='common-border common-border2'>
+				<div class="border-dashed"></div>
+			</div>
+		</section>
+
+		<section id="border-dashed" class="demo">
+			<h1>3. z-index 层叠顺序</h1>
+			<h3>注意七层模型 而且这里div加上opacity之后就变的不一样.
+			(opacity: .9;)这里的opacity让div生成了堆叠上下午的概念。此时对两者进行层叠排列就需要z-index。z-index越高 层级越高。这里两者相同 所有后面的覆盖前面的</h3>
+			<div class='common-border'>
+				<div class="container">
+					<div class="inline-block">
+						#divA display:inline-block
+					</div>
+					<div class="float">
+						#divB float:left
+					</div>
+				</div>
+
+			</div>
+			<h3 class='second'>
+				<img src="img/stack.png" alt="">
+			</h3>
+			<div style='position: absolute;right: 10%;'>
+					<img src="img/z-index.png" alt="z-index" height="400px">
+				</div>
+		</section>
+
+
+		<section id="border-dashed" class="demo">
+			<h1>2. 背景倒影inherit</h1>
+			<div class='common-border'>
+				<div class="img">
+
+				</div>
+			</div>
+		</section>
+
+		<section id="border-dashed" class="demo">
+			<h1>5. 多背景模拟动态边框</h1>
+			<div class="common-border">
+				<div class="moreBackground"></div>
+			</div>
+		</section>
+
+	</div>
+</body>
+</html>

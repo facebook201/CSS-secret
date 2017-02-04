@@ -1,0 +1,214 @@
+@charset 'UTF-8';
+
+html,body{
+	height: 100%;
+}
+
+
+
+.container{
+	position: relative;
+	width: 100%;
+}
+.demo{
+	width: 100%;
+	border: 1px solid #e6e6e6;
+	height: 400px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.demo h1,
+.demo h3{
+	position: absolute;
+	top: calc(10% - 25px);
+	left: 10px;
+	font-size: 30px;
+	width: 360px;
+	height: 50px;
+	line-height: 50px;
+}
+.demo h3{
+	top: 30%;
+	left: 10px;
+	font-size: 18px;
+	line-height: 30px;
+	height: 30px;
+	color: red;
+}
+.demo .second{
+	left: 42%;
+	top: 10%;
+}
+/* ios 切换按钮 */
+
+.common-border{
+	height: 360px;
+	width: 360px;
+	position: absolute;
+	left: 30%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+	border: 5px dashed #3DB7A9;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.common-border2{
+	left: 55%;
+}
+
+.ios-checkbox .emulate-ios-button{
+	display: block;
+	position: relative;
+	width: 200px;
+	height: 100px;
+	border-radius: 100px;
+	transition: all .3s ease;
+	-webkit-transition: all .3 ease;
+	cursor: pointer;
+	background-color: #ccc;
+}
+
+.emulate-ios-button:after{
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	display: block;
+	width: 90px;
+	height: 90px;
+	border-radius: 100%;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+	-webkit-transition: all .3s ease;
+			transition: all .3s ease;
+}
+.emulate-ios-button:active::before{
+	width: 110px;
+}
+.raw-checkbox{
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+		/* 选中的状态 */
+.raw-checkbox:checked+label{
+	background: #34bf49;
+}
+
+/* 这里是为元素偏移 初始是0.9 + 0.5 */
+
+.raw-checkbox:checked + label::after{
+	left: 105px;
+}
+.raw-chechbox:checked + label:active::after{
+	left: 50px;
+}
+
+
+.raw-checkbox:disabled+label {
+    background: #d5d5d5;
+    pointer-events: none;
+}
+
+.raw-checkbox:disabled+label:after {
+    background: #bcbdbc;
+}
+
+/* CSS 一个标签画图形之虚线边框背景 */
+.border-dashed{
+	position: relative;
+	height: 180px;
+	width: 180px;
+	border: 20px dashed #2196f3;
+	/* background-color 与 background-image完全不相同 */
+    background: #9c27b0;
+}
+.border-dashed::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #fff;
+}
+
+.common-border2 .border-dashed{
+    position: relative;
+    height: 180px;
+    width: 180px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 20px dashed #cc9;
+}
+.common-border2 .border-dashed::before{
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
+    background-color: #996699;
+    z-index: -1;
+}
+
+/* CSS一个标签之 z-index */
+.common-border .container{
+	position: relative;
+	background-color: #ddd;
+}
+.common-border .container > div{
+	width: 200px;
+	height: 200px;
+}
+.common-border .container .float{
+	float: left;
+	background-color: deeppink;
+}
+.common-border .container .inline-block{
+	display: inline-block;
+	background-color: yellowgreen;
+	margin-left: -100px;
+}
+
+/* 背景图倒影 */
+.common-border .img{
+	position: relative;
+	margin-top: -180px;
+	height: 180px;
+	width: 180px;
+	background-image: url(img/img.png);
+}
+.common-border .img::after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;bottom: -100%;
+	background-image: inherit;
+	transform: rotateX(180deg);
+}
+
+/* 5 多背景模拟动态边框 */
+.moreBackground{
+	height: 300px;
+	width: 300px;
+	box-sizing: border-box;
+	transition: ease-in .3s;
+	background: linear-gradient(0, #108b96 2px, #108b96 2px) no-repeat,
+							linear-gradient(-90deg, #108b96 2px, #108b96 2px) no-repeat,
+							linear-gradient(-180deg, #108b96 2px, #108b96 2px) no-repeat,
+							linear-gradient(-270deg, #108b96 2px, #108b96 2px) no-repeat;
+	background-size: 0 2px, 2px 0, 0 2px, 2px 0;
+	background-position: left top, right top, right bottom, left bottom;
+}
+.moreBackground:hover{
+	background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+}
