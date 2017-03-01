@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Sticky footer</title>
+	<style>
+		html,body{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			min-height: 100%;
+			/* 等于footer高度 */
+			margin-bottom: -50px;
+			height: 700px;
+		}
+		.footer, .push{
+			height: 50px;
+		}
+		.footer{
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<div class="wrapper">
+		content
+		<div class="push"></div>
+	</div>
+	
+	<footer class="footer"></footer>
+</body>
+</html>
