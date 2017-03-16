@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex布局</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 2px solid #000;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: #05abe0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="red box"></div>
+    <div class="green box"></div>
+    <div class="blue box"></div>
+
+    <div class="green box"></div>
+    <div class="blue box"></div>
+    <div class="yellow box"></div>
+</div>
+
+</body>
+</html>
