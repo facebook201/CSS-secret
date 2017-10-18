@@ -7,9 +7,7 @@
 rotate() / skew() / scale() / translate(,) 
 
 * transform: rotate(); // 表示deg 旋转的度 10deg 表示10度
-
 * transform: rotate(); // skew() 倾斜的角度
-
 * transform: scale(); // 缩放 法大比例 放大2倍就是 '2.0';
 
   可以应用在 字体缩小的情况。比如说 浏览器最小是12px。
@@ -20,21 +18,19 @@ rotate() / skew() / scale() / translate(,)
 
 css的transition 允许css的属性值在一定时间内平滑的过渡。可以通过鼠标单击、获得焦点、被点击对元素任何改变中触发。圆滑的以动画效果改变css的属性值。
 
-
-
-* transition-duration: <time> ; // 指定元素转换过程的持续时间
-
-  ​
-
+* transition-duration: <time> ; // 指定元素转换过程的持续时间  
 * transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier ;
 
   ease 逐渐变慢  linear 匀速 ease-in 加速 ease-out 减速 ease-in-out 加速然后减速 
-
-  ​
-
+  
 * transition-delay: <time> ; // 用来指定一个动画开始执行的时间。 
 
+#### 动画的几个关键点
+
+* 我们可以利用opacity 透明度来设置 从0 到 1 用多久时间
+* 我们可以从height 从 0 到 多少来更加描述一个从上过渡到下的动画 
   ​
+
 
 
 
