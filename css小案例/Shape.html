@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<style>
+		*{padding: 0; margin: 0;}
+		#app {
+		  width: 1200px;
+			margin: 0 auto;
+		}
+		.shape {
+			width: 0;
+			height: 0;
+			margin-bottom: 20px;
+		}
+		/* 三角形 如果头部指向哪里 哪边就不是透明的 */
+		.triangle {
+			border: 50px solid transparent;
+			border-bottom: 100px solid pink;
+		}
+		/* 直角三角形 就是两边边框挤压而成  直角边在哪边 实体就在哪边 */
+		.right-triangle {
+			border-top: 100px solid transparent;
+			border-right: 100px solid yellow;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="app">
+		
+		<div class="shape triangle"></div>
+		<div class="shape right-triangle"></div>
+
+	</div>
+
+</body>
+</html>
