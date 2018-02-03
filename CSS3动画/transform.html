@@ -24,6 +24,75 @@
       border-top: 2px solid #ccc;
       border-bottom: 2px solid #ccc;
     }
+    div {
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.reverseRotate {
+    margin: 20px auto;
+}
+.rotate,
+.reverseRotate {
+    width: 200px;
+    height: 200px;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    text-align: center;
+    background-color: rgba(255, 100, 100, .8);
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 0px 0px 8px 2px rgba(100, 100, 100, .6);
+}
+.rotate {
+    animation: rotate 5s linear infinite; 
+}
+.reverseRotate {
+    animation: reverseRotate 5s linear infinite; 
+}
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateZ(0deg);
+    }
+    50% {
+        transform: rotateX(40deg) rotateZ(180deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateZ(360deg);
+    }
+}
+@keyframes reverseRotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+/* 动画相同 缓动不同 */
+.ball {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.ball1 {
+  animation: move 1s ease-in infinite alternate;
+}
+.ball2 {
+  animation: move 1s linear infinite alternate;
+}
+.ball3 {
+  animation: move 1s ease-out infinite alternate;
+}
+@keyframes move{
+  100% {
+    transform: translateY(100px);
+  }
+}
   </style>
 </head>
 <body>
@@ -36,7 +105,18 @@
 
   <div class="section">
     <div class="reverseRotate">
-      <div class="content">正负旋转相消3D动画</div>
+      <div class="rotate">
+        <div class="content">正负旋转相消3D动画</div>
+      </div> 
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>动画相同 缓动不同</h1>
+    <div class="container">
+      <div class="ball ball1"></div>
+      <div class="ball ball2"></div>
+      <div class="ball ball3"></div>
     </div>
   </div>
 
