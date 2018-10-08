@@ -84,7 +84,7 @@ body { font-size: 14px; line-height: 1.4286;}
 
 下面是一张图片。发现图片下面有一点空隙。并没有占满。这是什么原因。**隐匿文本节点**  后面跟着看不到的文字。因为文本是根据baseline对其的。
 
-
+![border](https://github.com/facebook201/HTML-CSS/blob/master/img/lineheight.png)
 
 如何消除？
 
