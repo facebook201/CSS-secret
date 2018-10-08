@@ -79,3 +79,14 @@
 | 关闭   | close    | close |
 | 出错   | error    | err   |
 | 不可用  | disabled | dis   |
+
+
+
+### 书写顺序
+
+* 定位元素 position display float left top bottom overflow clear z-index
+* 自身属性 width height padding border margin background
+* 文字样式 font color 
+* 文本属性 text-align vertical-align text-wrap  letter-spacing word-spacing ....
+* css3的新增属性 content box-shadow border-raduis transform
+

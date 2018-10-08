@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    	*{padding: 0; margin: 0;}
+    	html, body{
+    		height: 100%;
+    		width: 100%;
+    	}
+    	.container{
+    		position: relative;
+    		overflow: hidden;
+    		height: 290px;
+    		width: 100%;
+    	}
+		.circle-load {
+			position: relative;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 100px;
+			width: 120px;
+			height: 120px;
+      	}
+      	circle{
+      		transform-origin: center;
+      	}
+      	.circle {
+      		position: relative;
+      		transform: rotate(45deg);
+      	}
+      	.circle-load::after {
+      		position: absolute;
+      		display: block;
+      		top: 38px;
+			left: 50%;
+			margin-left: -12px;
+			height: 36px;
+			line-height: 36px;
+			width: 24px;
+	      	content: 'x';
+			font-size: 50px;
+			font-weight: 100;
+	      	color: #ff5400; 
+	      	transform: scaleY(0);
+	      	transform-origin: center;
+	      	transition: transform .15s cubic-bezier(.20, .54, .79, .52) .05s;
+      	}
+	    .circle-finish::after{
+			transform: scaleY(1);
+	    }
+	    .txt {
+	     	text-align: center;
+	    }
+	    .foot {
+	    	position: relative;
+	    	overflow: hidden;
+	    	margin-top: 50px;
+	    	margin-left: 25px;
+	    	margin-right: 25px;
+	    }
+	    .foot .tel {
+	    	text-align: center;
+	    }
+	    .foot .tel .tel-href {
+			display: inline-block;
+			text-decoration: none;
+			color: #1e85e2;
+	    }
+	    .finish-btn {
+			display: inline-block;
+			width: 100%;
+			margin-bottom: 80px;
+			outline: none;
+			border: none;
+			line-height: 44px;
+			color: #fff;
+			cursor: pointer;
+			text-align: center;
+			border-radius: 5px;
+	    }
+	    .btn-color {
+			background-color: #1e85e2;
+	    }
+
+    </style>
+</head>
+<body class="body-wapper">
+
+	<div class="container">
+		<div class="circle-load">
+			<svg width="120px" height="120px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+				<circle r="50" cy="60" cx="60" stroke-width="2" stroke-dasharray="314" stroke-dashoffset="314"  stroke="#ff5400" fill="none" class="circle"></circle>
+			</svg>
+			<p class="txt" id="txt"></p>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<a class="finish-btn" id="btn"></a>
+		<p class="tel">
+			<a href="tel:400-008-7279" class="tel-href">400-008-7279</a>
+		</p>
+	</div>
+</body>
+
+<script type="text/javascript">
+
+	;(function(win, doc, defined){
+		var circle = doc.querySelector('.circle');
+		var circleLoad = doc.querySelector('.circle-load');
+		var txt = doc.getElementById('txt');
+		var btn = doc.getElementById('btn');
+
+		var offset = 314;
+		var stand = 15;
+
+		function circleProgress() {
+			circle.setAttribute('stroke-dashoffset', offset);
+			if (offset > stand) {
+				offset -= 5;
+				win.requestAnimationFrame(circleProgress);
+			} else {
+				txt.innerHTML = '申请失败';
+				btn.innerHTML = '重新申请';
+				btn.className = 'finish-btn btn-color';
+				circleLoad.className = 'circle-load circle-finish';
+				win.cancelAnimationFrame(circleProgress);
+			}
+		}
+		win.requestAnimationFrame(circleProgress);
+	}(this, document));
+
+</script>
+</body>
+</html>
